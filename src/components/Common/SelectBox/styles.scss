@@ -1,0 +1,163 @@
+.multi-select {
+    width: 400px;
+    z-index: 20;
+}
+
+.select-box {
+    position: relative;
+}
+
+.select-box select {
+    width: 100%;
+    font-weight: bold;
+    height: 30px;
+    border-radius: 5px;
+    border: 0px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.overSelect {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+
+}
+ 
+// div containing checkbox option list
+#checkboxes {
+    display: none;
+    border: 1px #dadada solid;
+    position: absolute;
+    background-color: #fff;
+    width: inherit;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+
+#checkboxes label {
+    display: block;
+  }
+
+.links {
+    padding: 2px;
+    border-bottom: 1px solid black;
+}
+
+.checkbox-label {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    font-size: 22px;
+    line-height: 24px;
+    height: 24px;
+    width: 24px;
+    padding: 5px 5px 5px 5px;
+}
+
+
+// making the input tag invisible instead of hiding it. latter one does not allow to use onClick()
+.checkbox-label input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+
+//customizing the checkbox 
+.checkbox-label .checkbox-custom {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 24px;
+    width: 24px;
+    background-color: transparent;
+    border-radius: 5px;
+    border: 2px solid #009BFF;
+    transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+}
+
+
+//when the checkbox is checked
+.checkbox-label input:checked ~ .checkbox-custom {
+    background-color: #009BFF;
+    border-radius: 5px;
+    -webkit-transform: rotate(0deg) scale(0);
+    -ms-transform: rotate(0deg) scale(1);
+    transform: rotate(0deg) scale(1);
+    opacity: 1;
+    border: 2px solid #ffffff;
+}
+
+
+.checkbox-label .checkbox-custom::after{
+    position: absolute;
+    content: '';
+    left: 12px;
+    top: 12px;
+    height: 0px;
+    width: 0px;
+    border-radius: 5px;
+    border: solid #009BFF;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(0deg) scale(0);
+    -ms-transform: rotate(0deg) scale(0);
+    transform: rotate(0deg) scale(0);
+    opacity: 1;
+    transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+}
+
+
+
+.checkbox-label input:checked ~ .checkbox-custom::after {
+    -webkit-transform: rotate(45deg) scale(1);
+    -ms-transform: rotate(45deg) scale(1);
+    transform: rotate(45deg) scale(1);
+    opacity: 1;
+    left: 8px;
+    top: 3px;
+    width: 6px;
+    height: 12px;
+    border: solid #FFFFFF;
+    border-width: 0 2px 2px 0;
+    background-color: transparent;
+    border-radius: 0;
+}
+
+.checkbox-container {
+    display: flex;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    padding: 10px 0px 10px 10px;
+}
+
+.input-title {
+    padding: 5px;
+    font-size: 16px;
+    color: steelblue;
+    font-weight: 300;
+}
+
+.select-all {
+    border: 0px;
+    background: transparent;
+    margin-bottom: 5px;
+}
+
+.clear-all {
+    margin-left: 10px;
+    border: 0px;
+    background: transparent;
+    float: right;
+    
+}
